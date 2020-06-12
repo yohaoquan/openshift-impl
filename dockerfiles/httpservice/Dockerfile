@@ -1,8 +1,8 @@
-FROM php:7.4.6-apache 
-
-
-RUN docker-php-ext-install mysqli
-
-CMD ["apachectl","-D","FOREGROUND"] 
-
-EXPOSE 80 
+FROM ubi7/php-73 
+LABEL description="This is a custom artStore httpd+php container image" 
+EXPOSE 8080
+ENV LogLevel "info" 
+COPY ./htdocs/ /var/www/html/ 
+USER apache 
+ENTRYPOINT ["/usr/sbin/httpd"] 
+CMD ["-D", "FOREGROUND"] 1
