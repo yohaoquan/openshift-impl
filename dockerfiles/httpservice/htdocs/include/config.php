@@ -1,9 +1,12 @@
 <?php
 
 
-define('DBHOST', 'database');
+define('DBHOST', 'localhost');
 define('DBUSER', 'root');
-define('DBPASS', 'examplepasswd');
+define('DBPASS', '');
 define('DBNAME', 'artDB');
+
+
+
 
 ?>
