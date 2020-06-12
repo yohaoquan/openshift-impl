@@ -8,10 +8,8 @@ if (!isset($_SESSION["WishList"])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo 'Count = ' . count($_SESSION["WishList"]->paintings);
     for ($x = 0; $x < count($_SESSION["WishList"]->paintings); $x++) {
         if ($id === $_SESSION["WishList"]->paintings[$x]->paintingID) {
-            echo 'found item at index' . $x . '. removing..';
             if ($x === 0) {
                 array_shift($_SESSION["WishList"]->paintings);
             } else {
