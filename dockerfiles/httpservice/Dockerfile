@@ -1,8 +1,9 @@
-FROM registry.access.redhat.com/ubi7/php-73
+FROM php:7.4.6-apache
 LABEL description="This is a custom artStore httpd+php container image" 
 EXPOSE 8080
 ENV LogLevel "info" 
+RUN docker-php-ext-install mysqli
 ADD ./htdocs.zip /var/www/html/ 
 USER apache 
-ENTRYPOINT ["httpd"] 
+ENTRYPOINT ["apachectl"] 
 CMD ["-D", "FOREGROUND"] 
