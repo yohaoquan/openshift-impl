@@ -4,5 +4,5 @@ EXPOSE 8080
 ENV LogLevel "info" 
 ADD ./htdocs.zip /var/www/html/ 
 USER apache 
-ENTRYPOINT ["apachectl"] 
+ENTRYPOINT ["httpd"] 
 CMD ["-D", "FOREGROUND"] 
