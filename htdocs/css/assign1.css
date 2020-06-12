@@ -1,0 +1,160 @@
+body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   line-height: 1.428571429;
+   color: #333333;
+   background-image: url(../images/stucco/stucco.png);
+}
+h1 {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 48px;
+   line-height: 1.428571429;
+   color: #515151;
+}
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    line-height: 1.428571429;
+    color: #515151;
+}
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.428571429;
+    color: #515151;
+}
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+header, div, nav {
+    display: block
+}
+.topNav {
+    height: 38px;
+    line-height: 38px;
+    background: #343434
+}
+.topNav nav {
+    float: right
+}
+.topNav a {
+    margin-right: 4ex;
+    color: #B4B4B4;
+    text-decoration: none
+}
+.topNav a:hover {
+    color: white;
+}
+
+
+.midNav {
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #e7e7e7;
+    background: #f7f8f8
+}
+.midNav nav {
+    float: left
+}
+.midNav a {
+    margin-left: 3ex;
+    color: #777777;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.midNav a:hover {
+    color: black;
+}
+
+
+.content {
+    margin-top: 14px;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    background: #ffffff;
+    margin-bottom: 12px;
+    overflow: auto
+        
+}
+.content p {
+    margin-bottom: 10px
+}
+.content h3 {
+    margin-top: 14px
+}
+.main_img {
+    vertical-align: top;
+    margin-right: 22px;
+    max-width: 288px;
+}
+ .main_content {
+    max-width: 550px;
+    float: right;
+    vertical-align: top
+}
+.price {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: red;
+}
+.main_btn{
+    font-size: 15px;
+    width: 250px;
+    margin-left: 10px;
+    padding: 10px 32px;
+    color: blue;
+    font-weight: bold;
+}
+.property_names{
+    font-weight: bold;
+    width: auto;
+    float: left;
+    margin-right: 1ex;
+}
+
+.property_values{
+    width: auto;
+    float: left;
+}
+.similarP {
+    text-align: center;
+    margin: 5px;
+    padding: 7px;
+    border: 1px solid #e7e7e7;
+    height: 180px;
+    width: 180px;
+    float: left
+/*    display: inline-block*/
+}
+
+.bottomBar {
+    height: 38px;
+    line-height: 38px;
+    background: #343434;
+    color: #B4B4B4;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #b4b4b4
+}
+
+table {
+    table-layout: fixed;
+    width: 600px;
+}
+
+input, select {
+    width: 80%;
+    height: 27px
+}
+.checkbox {
+    width: inherit;
+    height: inherit
+}
