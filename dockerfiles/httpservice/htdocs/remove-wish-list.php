@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
             } else {
                 array_splice($_SESSION["WishList"]->paintings, $x, $x);
             }
-            var_dump($_SESSION["WishList"]->paintings);
             break;
         }
     }
