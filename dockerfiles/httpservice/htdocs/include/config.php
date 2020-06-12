@@ -2,8 +2,8 @@
 
 
 define('DBHOST', 'mysql');
-define('DBUSER', 'root');
-define('DBPASS', 'rootpass');
+define('DBUSER', 'dbuser');
+define('DBPASS', 'dbpass');
 define('DBNAME', 'artDB');
 
 
