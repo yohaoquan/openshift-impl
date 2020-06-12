@@ -1,37 +1,19 @@
 <?php
-  if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-if(isset($_SESSION['paintings']))
-{
-    $paintings = $_SESSION['paintings'];
-    }
-else
-{
-    $paintings = array();
+
+include 'include/WishList.php';
+session_start();
+echo session_save_path().'/sess_'.session_id() . "\n";
+if ( !isset($_SESSION["WishList"]) ) {
+    $_SESSION["WishList"] = new WishList();
 }
 
-$id = $_GET['id'];
-$title = $_GET['title'];
-$image = $_GET['image'];
-
-
-$info = array();
-
-$key = array_search($paintings,$info);
-
-if($key==NULL){
-    array_push($info,$id,$title,$image);
-    array_push($paintings,$info);
-}else{
-    echo 0;
+if (isset($_GET['id']) && isset($_GET['title']) && isset($_GET['imageName'])) {
+    $paintingToAdd = new painting($_GET['id'], $_GET['title'], $_GET['imageName']);
+    $_SESSION["WishList"]->paintings[] = ($paintingToAdd);
 }
 
-
-
-$_SESSION['paintings'] = $paintings;
-//echo $paintings[0];
-header("Location: view-wish-list.php");
+$painting = end($_SESSION["WishList"]->paintings);
+echo 'PaintingID = ' . $painting->paintingID . ',  Title=' . $painting->Title . ', ImageName=' . $painting-> imageFileName;
+header("Location:view-wish-list.php");
 
 ?>

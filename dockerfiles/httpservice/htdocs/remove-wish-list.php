@@ -1,37 +1,28 @@
 <?php
+
+include 'include/WishList.php';
 session_start();
+if (!isset($_SESSION["WishList"])) {
+    $_SESSION["WishList"] = new WishList();
+}
 
-//if(isset($_SESSION['paintings']))
-//{    
-//    $paintings = $_SESSION['paintings'];
-//}
-//else
-//{
-//    $paintings = array();
-//}
-$paintings = $_SESSION['paintings'];
-
-$id = $_GET['id'];
-echo $id;
-if ($id==-1){
-    unset($paintings);
-    $paintings = array();
-}else{
-    for($i =0; $i <= count($paintings); $i++){ 
-        for($j =0; $j <= $i; $j++){
-            if($paintings[$i][0] == $id){
-                unset($paintings[$i]);
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    echo 'Count = ' . count($_SESSION["WishList"]->paintings);
+    for ($x = 0; $x < count($_SESSION["WishList"]->paintings); $x++) {
+        if ($id === $_SESSION["WishList"]->paintings[$x]->paintingID) {
+            echo 'found item at index' . $x . '. removing..';
+            if ($x === 0) {
+                array_shift($_SESSION["WishList"]->paintings);
+            } else {
+                array_splice($_SESSION["WishList"]->paintings, $x, $x);
             }
+            var_dump($_SESSION["WishList"]->paintings);
+            break;
         }
+    }
+} else {
+    $_SESSION["WishList"] = new WishList();
 }
-}
 
-
-//echo $key;
-//unset($paintings[])
-
-$_SESSION['paintings'] = $paintings;
-//echo $paintings[0];
-header("Location: view-wish-list.php");
-
-?>
+header("Location:view-wish-list.php");
