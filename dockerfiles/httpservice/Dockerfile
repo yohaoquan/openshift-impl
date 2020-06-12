@@ -4,7 +4,7 @@ EXPOSE 8080
 ENV LogLevel "info" 
 RUN docker-php-ext-install mysqli
 ADD ./htdocs.zip /var/www/html/ 
-ADD ./httpd.conf /usr/local/apache2/conf/
+ADD ./httpd.conf /etc/apache2/httpd.conf
 USER root 
 ENTRYPOINT ["apachectl"] 
 CMD ["-D", "FOREGROUND"] 
