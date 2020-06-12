@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+    httpservice:
+        build: "./.docker/httpservice/"
+        ports:
+            - "8080:80"
+        volumes:
+            - ./htdocs/:/var/www/html/
+        networks:
+            - dbchannel
+    database:
+        build: "./.docker/database/"
+        ports:
+            - "13306:3306"
+        networks:
+            - dbchannel
+        environment: 
+            - MYSQL_ROOT_PASSWORD=examplepasswd
+            - MYSQL_DATABASE=artDB
+networks:
+    dbchannel:
